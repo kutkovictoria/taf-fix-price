@@ -17,12 +17,9 @@ public class HomePage {
     private String catalogButtonLocator = "//a[@class='catalog-link']";
     private String cartButtonLocator = "//a[@class='cart link']";
 
-    public HomePage() {
-        this.driver = Singleton.getDriver();
-    }
 
     public void openHomePage() {
-        driver.get("https://fix-price.by/");
+        Singleton.getDriver().get("https://fix-price.by/");
     }
 
     public void clickLoginButton() {
@@ -30,9 +27,9 @@ public class HomePage {
         loginButtonElement.click();
     }
 
-    public void getCopyRightText() {
+    public String getCopyRightText() {
         WebElement copyRightElement = driver.findElement(By.xpath(copyRightLocator));
-        copyRightElement.getText();
+        return copyRightElement.getText();
     }
 
     public void clickAcceptCookieButton() {
