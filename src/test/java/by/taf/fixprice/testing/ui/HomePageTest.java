@@ -6,7 +6,7 @@ import org.junit.jupiter.api.Test;
 
 public class HomePageTest extends BaseTest{
     @Test
-    public void openHomePage(){
+    public void homePageIsOpened(){
         HomePage homePage = new HomePage();
         homePage.openHomePage();
         homePage.clickAcceptCookieButton();
