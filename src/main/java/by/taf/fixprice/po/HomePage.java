@@ -4,9 +4,12 @@ import by.taf.fixprice.webdriver.Singleton;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
+
+import java.time.Duration;
 
 public class HomePage {
-    private WebDriver driver;
     private String loginButtonLocator = "//button[@class='log-in link']";
     private String copyRightLocator = "//p[@class='copyright copyright-desktop']";
     private String acceptCookieButtonLocator = "//button[text() = 'Принять все файлы cookie']";
@@ -17,43 +20,46 @@ public class HomePage {
     private String catalogButtonLocator = "//a[@class='catalog-link']";
     private String cartButtonLocator = "//a[@class='cart link']";
 
-
     public void openHomePage() {
         Singleton.getDriver().get("https://fix-price.by/");
     }
 
     public void clickLoginButton() {
-        WebElement loginButtonElement = driver.findElement(By.xpath(loginButtonLocator));
+        WebElement loginButtonElement = Singleton.getDriver().findElement(By.xpath(loginButtonLocator));
         loginButtonElement.click();
     }
 
     public String getCopyRightText() {
-        WebElement copyRightElement = driver.findElement(By.xpath(copyRightLocator));
+        WebElement copyRightElement = Singleton.getDriver().findElement(By.xpath(copyRightLocator));
         return copyRightElement.getText();
     }
 
     public void clickAcceptCookieButton() {
-        WebElement acceptCookieButtonElement = driver.findElement(By.xpath(acceptCookieButtonLocator));
+        WebElement acceptCookieButtonElement = new WebDriverWait(Singleton.getDriver(), Duration.ofSeconds(1))
+                .until(ExpectedConditions.elementToBeClickable(By.xpath(acceptCookieButtonLocator)));
         acceptCookieButtonElement.click();
+
     }
 
     public void clickConfirmMinskLocationButton() {
-        WebElement confirmMinskLocationButtonElement = driver.findElement(By.xpath(confirmMinskLocationButtonLocator));
+        WebElement confirmMinskLocationButtonElement = new WebDriverWait(Singleton.getDriver(), Duration.ofSeconds(1))
+                .until(ExpectedConditions.elementToBeClickable(By.xpath(confirmMinskLocationButtonLocator)));
         confirmMinskLocationButtonElement.click();
     }
 
     public void clickChooseDeliveryStoreButton() {
-        WebElement chooseDeliveryStoreButtonElement = driver.findElement(By.xpath(chooseDeliveryStoreButtonLocator));
+        WebElement chooseDeliveryStoreButtonElement = new WebDriverWait(Singleton.getDriver(), Duration.ofSeconds(10))
+                .until(ExpectedConditions.elementToBeClickable(By.xpath(chooseDeliveryStoreButtonLocator)));
         chooseDeliveryStoreButtonElement.click();
     }
 
     public void clickCatalogButton() {
-        WebElement catalogButtonElement = driver.findElement(By.xpath(catalogButtonLocator));
+        WebElement catalogButtonElement = Singleton.getDriver().findElement(By.xpath(catalogButtonLocator));
         catalogButtonElement.click();
     }
 
     public void clickCartButton() {
-        WebElement cartButtonElement = driver.findElement(By.xpath(cartButtonLocator));
+        WebElement cartButtonElement = Singleton.getDriver().findElement(By.xpath(cartButtonLocator));
         cartButtonElement.click();
     }
 
