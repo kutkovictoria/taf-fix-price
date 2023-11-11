@@ -14,10 +14,10 @@ public class BaseTest {
         homePage.openHomePage();
         homePage.clickAcceptCookieButton();
         homePage.clickConfirmMinskLocationButton();
-        homePage.clickChooseDeliveryStoreButton();
-        DeliveryStorePage storePage = new DeliveryStorePage();
-        storePage.clickOnFirstAddressFromTheList();
-        storePage.clickSelectStoreButton();
+//        homePage.clickChooseDeliveryStoreButton();
+//        DeliveryStorePage storePage = new DeliveryStorePage();
+//        storePage.clickOnFirstAddressFromTheList();
+//        storePage.clickSelectStoreButton();
     }
 
     @AfterEach
