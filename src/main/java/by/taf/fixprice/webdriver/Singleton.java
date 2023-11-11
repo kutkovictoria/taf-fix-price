@@ -1,13 +1,15 @@
 package by.taf.fixprice.webdriver;
 
-import org.openqa.selenium.By;
-import org.openqa.selenium.ElementNotInteractableException;
-import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.FluentWait;
 import org.openqa.selenium.support.ui.Wait;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.time.Duration;
+
+import static by.taf.fixprice.po.HomePageLocators.CONFIRM_MINSK_LOCATION_BUTTON_LOCATOR;
 
 public class Singleton {
     private static WebDriver driver;
@@ -31,25 +33,53 @@ public class Singleton {
         }
     }
 
-    public static void waitFor(int seconds){
+    public static void clickElement(String xpath) {
+        WebElement confirmMinskLocationButtonElement = new WebDriverWait(Singleton.getDriver(), Duration.ofSeconds(1))
+                .until(ExpectedConditions.elementToBeClickable(By.xpath(xpath)));
+        confirmMinskLocationButtonElement.click();
+    }
+
+    public static void waitForElementAndClick(String xpath) {
         try {
-            Thread.sleep(seconds*1000);
-        } catch (InterruptedException e) {
-            throw new RuntimeException(e);
+            Wait<WebDriver> wait =
+                    new FluentWait<>(Singleton.getDriver())
+                            .withTimeout(Duration.ofSeconds(2))
+                            .pollingEvery(Duration.ofMillis(300))
+                            .ignoring(ElementNotInteractableException.class);
+
+            wait.until(
+                    d -> {
+                        Singleton.getDriver().findElement(By.xpath(xpath)).click();
+                        return true;
+                    });
+        } catch (TimeoutException e) {
+            System.out.println("TimeoutException!");
         }
     }
 
-    public static void sendKeysElement(String xpath, String sendKeys) {
-        Wait<WebDriver> wait =
-                new FluentWait<>(Singleton.getDriver())
-                        .withTimeout(Duration.ofSeconds(2))
-                        .pollingEvery(Duration.ofMillis(300))
-                        .ignoring(ElementNotInteractableException.class);
+    public static void waitForElementAndSendKeys(String xpath, String sendKeys) {
+        try {
+            Wait<WebDriver> wait =
+                    new FluentWait<>(Singleton.getDriver())
+                            .withTimeout(Duration.ofSeconds(2))
+                            .pollingEvery(Duration.ofMillis(300))
+                            .ignoring(ElementNotInteractableException.class);
 
-        wait.until(
-                d -> {
-                    Singleton.getDriver().findElement(By.xpath(xpath)).sendKeys(sendKeys);
-                    return true;
-                });
+            wait.until(
+                    d -> {
+                        Singleton.getDriver().findElement(By.xpath(xpath)).sendKeys(sendKeys);
+                        return true;
+                    });
+        } catch (TimeoutException e) {
+            System.out.println("TimeoutException!");
+        }
+    }
+
+    public static void waitFor(int seconds) {
+        try {
+            Thread.sleep(seconds * 1000);
+        } catch (InterruptedException e) {
+            throw new RuntimeException(e);
+        }
     }
 }

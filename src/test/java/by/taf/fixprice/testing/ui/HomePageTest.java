@@ -8,9 +8,6 @@ public class HomePageTest extends BaseTest{
     @Test
     public void homePageIsOpened(){
         HomePage homePage = new HomePage();
-        homePage.openHomePage();
-        homePage.clickAcceptCookieButton();
-        homePage.clickConfirmMinskLocationButton();
         String actualResult = homePage.getCopyRightText();
         String expectedResult = "ООО \"Фикс Прайс Запад\"\n" +
                 "УНП 193351144\n" +

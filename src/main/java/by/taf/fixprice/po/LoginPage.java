@@ -4,6 +4,7 @@ import by.taf.fixprice.webdriver.Singleton;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 
+import static by.taf.fixprice.po.HomePageLocators.COPY_RIGHT_LOCATOR;
 import static by.taf.fixprice.po.HomePageLocators.LOGIN_BUTTON_LOCATOR;
 import static by.taf.fixprice.po.LoginPageLocators.*;
 
@@ -23,5 +24,9 @@ public class LoginPage {
     public void clickEnterButton() {
         WebElement enterButtonElement = Singleton.getDriver().findElement(By.xpath(ENTER_LOCATOR));
         enterButtonElement.click();
+    }
+    public String getErrorText() {
+        WebElement errorTextElement = Singleton.getDriver().findElement(By.xpath(ERROR_LOCATOR));
+        return errorTextElement.getText();
     }
 }

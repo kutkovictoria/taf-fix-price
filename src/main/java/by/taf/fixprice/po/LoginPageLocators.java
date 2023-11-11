@@ -7,4 +7,5 @@ public class LoginPageLocators {
     public static final String PHONE_INPUT_LOCATOR = "//input[@data-test='input'][@type='text']";
     public static final String PASSWORD_INPUT_LOCATOR = "//input[@data-test='input'][@type='password']";
     public static final String ENTER_LOCATOR = "//button[@class='button enter-button normal']";
+    public static final String ERROR_LOCATOR = "//div[@class='error']";
 }

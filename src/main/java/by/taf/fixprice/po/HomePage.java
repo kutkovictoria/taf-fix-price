@@ -2,6 +2,7 @@ package by.taf.fixprice.po;
 
 import by.taf.fixprice.webdriver.Singleton;
 import org.openqa.selenium.By;
+import org.openqa.selenium.TimeoutException;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -12,14 +13,12 @@ import static by.taf.fixprice.po.HomePageLocators.*;
 
 public class HomePage {
 
-
     public void openHomePage() {
         Singleton.getDriver().get("https://fix-price.by/");
     }
 
     public void clickLoginButton() {
-        WebElement loginButtonElement = Singleton.getDriver().findElement(By.xpath(LOGIN_BUTTON_LOCATOR));
-        loginButtonElement.click();
+        Singleton.clickElement(LOGIN_BUTTON_LOCATOR);
     }
 
     public String getCopyRightText() {
@@ -28,32 +27,23 @@ public class HomePage {
     }
 
     public void clickAcceptCookieButton() {
-        WebElement acceptCookieButtonElement = new WebDriverWait(Singleton.getDriver(), Duration.ofSeconds(1))
-                .until(ExpectedConditions.elementToBeClickable(By.xpath(ACCEPT_COOKIE_BUTTON_LOCATOR)));
-        acceptCookieButtonElement.click();
-
+        Singleton.waitForElementAndClick(ACCEPT_COOKIE_BUTTON_LOCATOR);
     }
 
     public void clickConfirmMinskLocationButton() {
-        WebElement confirmMinskLocationButtonElement = new WebDriverWait(Singleton.getDriver(), Duration.ofSeconds(1))
-                .until(ExpectedConditions.elementToBeClickable(By.xpath(CONFIRM_MINSK_LOCATION_BUTTON_LOCATOR)));
-        confirmMinskLocationButtonElement.click();
+        Singleton.clickElement(CONFIRM_MINSK_LOCATION_BUTTON_LOCATOR);
     }
 
     public void clickChooseDeliveryStoreButton() {
-        WebElement chooseDeliveryStoreButtonElement = new WebDriverWait(Singleton.getDriver(), Duration.ofSeconds(10))
-                .until(ExpectedConditions.elementToBeClickable(By.xpath(CHOOSE_DELIVERY_STORE_BUTTON_LOCATOR)));
-        chooseDeliveryStoreButtonElement.click();
+        Singleton.clickElement(CHOOSE_DELIVERY_STORE_BUTTON_LOCATOR);
     }
 
     public void clickCatalogButton() {
-        WebElement catalogButtonElement = Singleton.getDriver().findElement(By.xpath(DELIVERY_STORE_ADDRESS_BUTTON_LOCATOR));
-        catalogButtonElement.click();
+        Singleton.clickElement(DELIVERY_STORE_ADDRESS_BUTTON_LOCATOR);
     }
 
     public void clickCartButton() {
-        WebElement cartButtonElement = Singleton.getDriver().findElement(By.xpath(CART_BUTTON_LOCATOR));
-        cartButtonElement.click();
+        Singleton.clickElement(CART_BUTTON_LOCATOR);
     }
 
 }
