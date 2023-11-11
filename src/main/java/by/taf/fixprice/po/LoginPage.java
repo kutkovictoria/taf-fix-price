@@ -17,6 +17,10 @@ public class LoginPage {
         WebElement emailInputElement = Singleton.getDriver().findElement(By.xpath(EMAIL_INPUT_LOCATOR));
         emailInputElement.sendKeys(email);
     }
+    public void enterPhoneNumber(String phoneNumber) {
+        WebElement emailInputElement = Singleton.getDriver().findElement(By.xpath(PHONE_INPUT_LOCATOR));
+        emailInputElement.sendKeys(phoneNumber);
+    }
     public void enterPassword(String password) {
         WebElement emailInputElement = Singleton.getDriver().findElement(By.xpath(PASSWORD_INPUT_LOCATOR));
         emailInputElement.sendKeys(password);
