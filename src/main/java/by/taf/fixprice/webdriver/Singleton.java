@@ -9,8 +9,6 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.time.Duration;
 
-import static by.taf.fixprice.po.HomePageLocators.CONFIRM_MINSK_LOCATION_BUTTON_LOCATOR;
-
 public class Singleton {
     private static WebDriver driver;
 
@@ -33,13 +31,23 @@ public class Singleton {
         }
     }
 
-    public static void clickElement(String xpath) {
+    public static void clickWebElement(String xpath) {
         WebElement confirmMinskLocationButtonElement = new WebDriverWait(Singleton.getDriver(), Duration.ofSeconds(1))
                 .until(ExpectedConditions.elementToBeClickable(By.xpath(xpath)));
         confirmMinskLocationButtonElement.click();
     }
+    public static String getTextFromWebElement(String xpath) {
+        WebElement confirmMinskLocationButtonElement = new WebDriverWait(Singleton.getDriver(), Duration.ofSeconds(1))
+                .until(ExpectedConditions.elementToBeClickable(By.xpath(xpath)));
+       return confirmMinskLocationButtonElement.getText();
+    }
+    public static void findWebElementAndSendKeys(String xpath, String sendKeys) {
+        WebElement confirmMinskLocationButtonElement = new WebDriverWait(Singleton.getDriver(), Duration.ofSeconds(1))
+                .until(ExpectedConditions.elementToBeClickable(By.xpath(xpath)));
+        confirmMinskLocationButtonElement.sendKeys(sendKeys);
+    }
 
-    public static void waitForElementAndClick(String xpath) {
+    public static void waitForWebElementAndClick(String xpath) {
         try {
             Wait<WebDriver> wait =
                     new FluentWait<>(Singleton.getDriver())
@@ -57,7 +65,7 @@ public class Singleton {
         }
     }
 
-    public static void waitForElementAndSendKeys(String xpath, String sendKeys) {
+    public static void waitForWebElementAndSendKeys(String xpath, String sendKeys) {
         try {
             Wait<WebDriver> wait =
                     new FluentWait<>(Singleton.getDriver())

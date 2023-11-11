@@ -1,4 +1,4 @@
-package by.taf.fixprice.po;
+package by.taf.fixprice.locators;
 
 public class HomePageLocators {
     public static final String LOGIN_BUTTON_LOCATOR = "//button[@class='log-in link']";

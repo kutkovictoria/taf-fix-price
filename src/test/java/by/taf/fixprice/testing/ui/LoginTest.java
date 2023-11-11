@@ -22,6 +22,7 @@ public class LoginTest extends BaseTest {
         String actualResult = loginPage.getErrorText();
         Assertions.assertEquals(expectedResult, actualResult);
     }
+
     @Test
     public void loginWithWrongFormatEmailAnyPassword() {
         HomePage homePage = new HomePage();
@@ -37,6 +38,7 @@ public class LoginTest extends BaseTest {
         String actualResult = loginPage.getErrorText();
         Assertions.assertEquals(expectedResult, actualResult);
     }
+
     @Test
     public void loginWithEmptyEmailAnyPassword() {
         HomePage homePage = new HomePage();
@@ -52,6 +54,7 @@ public class LoginTest extends BaseTest {
         String actualResult = loginPage.getErrorText();
         Assertions.assertEquals(expectedResult, actualResult);
     }
+
     @Test
     public void loginWithAnyCorrectPhoneNumberAnyPassword() {
         HomePage homePage = new HomePage();
@@ -66,6 +69,7 @@ public class LoginTest extends BaseTest {
         String actualResult = loginPage.getErrorText();
         Assertions.assertEquals(expectedResult, actualResult);
     }
+
     @Test
     public void loginWithPhoneNumberWrongFormatAnyPassword() {
         HomePage homePage = new HomePage();
@@ -80,6 +84,7 @@ public class LoginTest extends BaseTest {
         String actualResult = loginPage.getErrorText();
         Assertions.assertEquals(expectedResult, actualResult);
     }
+
     @Test
     public void loginWithEmptyPhoneNumberAnyPassword() {
         HomePage homePage = new HomePage();

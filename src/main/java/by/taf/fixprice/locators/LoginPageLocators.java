@@ -1,4 +1,4 @@
-package by.taf.fixprice.po;
+package by.taf.fixprice.locators;
 
 public class LoginPageLocators {
     public static final String EMAIL_TAB_LOCATOR = "//button[@class='button small'][text() = 'По email']";
