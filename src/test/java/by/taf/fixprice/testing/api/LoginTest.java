@@ -1,5 +1,6 @@
 package by.taf.fixprice.testing.api;
 
+import jdk.jfr.Description;
 import org.junit.jupiter.api.Test;
 
 import static io.restassured.RestAssured.given;
@@ -11,8 +12,8 @@ public class LoginTest {
     @Test
     public void loginAnyEmailAndAnyPassword() {
         String body = "{\n" +
-                "    \"password\": \"qaw8s8d\",\n" +
-                "    \"email\": \"catrina8@gmail.com\",\n" +
+                "    \"password\": \"qaw8s87d\",\n" +
+                "    \"email\": \"catrin7a8@gmail.com\",\n" +
                 "    \"phone\": null\n" +
                 "}";
 
@@ -46,6 +47,7 @@ public class LoginTest {
                 body("extra.email[0]", equalTo("Требуется указать email"));
 
     }
+
     @Test
     public void loginAnyEmailAndEmptyPassword() {
         String body = "{\n" +
@@ -65,6 +67,7 @@ public class LoginTest {
                 body("message", equalTo("Ошибка валидации")).
                 body("extra.phone[0]", equalTo("Неверный логин или пароль"));
     }
+
     @Test
     public void loginEmptyEmailAndEmptyPassword() {
         String body = "{\n" +
@@ -84,6 +87,47 @@ public class LoginTest {
                 body("message", equalTo("Ошибка валидации")).
                 body("extra.email[0]", equalTo("Требуется указать email"));
     }
+
+    @Test
+    public void loginIncorrectEmailAndAnyPassword() {
+        String body = "{\n" +
+                "    \"password\": \"qwert3\",\n" +
+                "    \"email\": \"test.com\",\n" +
+                "    \"phone\": null\n" +
+                "}";
+
+        given().
+                header("Content-Type", "application/json").
+                header("x-city", "14").
+                header("x-key", "259d1827f3b8f41b6d123d3ebace9759").
+                body(body).
+                when().post(URL_API).
+                then().statusCode(400).
+                body("name", equalTo("Bad Request")).
+                body("message", equalTo("Ошибка валидации")).
+                body("extra.email[0]", equalTo("Укажите корректный email"));
+    }
+
+    @Test
+    public void loginAnyPhoneNumberAndAnyPassword() {
+        String body = "{\n" +
+                "    \"password\": \"q5aws78d\",\n" +
+                "    \"email\": null,\n" +
+                "    \"phone\": \"+375297255765\" \n" +
+                "}";
+
+        given().
+                header("Content-Type", "application/json").
+                header("x-city", "14").
+                header("x-key", "259d1827f3b8f41b6d123d3ebace9759").
+                body(body).
+                when().post(URL_API).
+                then().statusCode(400).
+                body("name", equalTo("Bad Request")).
+                body("message", equalTo("Неверный логин или пароль. Проверьте введённые данные и попробуйте снова. Осталось попыток: 4"));
+
+    }
+
     @Test
     public void loginWithIncorrectPhoneNumberAndAnyPassword() {
         String body = "{\n" +
@@ -103,23 +147,46 @@ public class LoginTest {
                 body("message", equalTo("Ошибка валидации")).
                 body("extra.phone[0]", equalTo("Укажите корректный номер телефона"));
     }
-        @Test
-        public void loginAnyPhoneNumberAndAnyPassword() {
-            String body = "{\n" +
-                    "    \"password\": \"q5aws88d\",\n" +
-                    "    \"email\": null,\n" +
-                    "    \"phone\": \"+375297255765\" \n" +
-                    "}";
 
-            given().
-                    header("Content-Type", "application/json").
-                    header("x-city", "14").
-                    header("x-key", "259d1827f3b8f41b6d123d3ebace9759").
-                    body(body).
-                    when().post(URL_API).
-                    then().statusCode(400).
-                    body("name", equalTo("Bad Request")).
-                    body("message", equalTo("Неверный логин или пароль. Проверьте введённые данные и попробуйте снова. Осталось попыток: 4"));
+    @Test
+    public void loginAnyPhoneNumberAndEmptyPassword() {
+        String body = "{\n" +
+                "    \"password\": \"\",\n" +
+                "    \"email\": null,\n" +
+                "    \"phone\": \"+375297855767\" \n" +
+                "}";
+
+        given().
+                header("Content-Type", "application/json").
+                header("x-city", "14").
+                header("x-key", "259d1827f3b8f41b6d123d3ebace9759").
+                body(body).
+                when().post(URL_API).
+                then().statusCode(400).
+                body("name", equalTo("Bad Request")).
+                body("message", equalTo("Ошибка валидации")).
+                body("extra.phone[0]", equalTo("Неверный логин или пароль"));
+
+    }
+
+    @Test
+    public void loginEmptyPhoneNumberAndEmptyPassword() {
+        String body = "{\n" +
+                "    \"password\": \"\",\n" +
+                "    \"email\": null,\n" +
+                "    \"phone\": \"\" \n" +
+                "}";
+
+        given().
+                header("Content-Type", "application/json").
+                header("x-city", "14").
+                header("x-key", "259d1827f3b8f41b6d123d3ebace9759").
+                body(body).
+                when().post(URL_API).
+                then().statusCode(400).
+                body("name", equalTo("Bad Request")).
+                body("message", equalTo("Ошибка валидации")).
+                body("extra.phone[0]", equalTo("Требуется указать телефон"));
 
     }
 }
