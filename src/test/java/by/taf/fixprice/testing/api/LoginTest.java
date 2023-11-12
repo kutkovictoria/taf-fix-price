@@ -10,8 +10,8 @@ public class LoginTest {
     @Test
     public void loginAnyEmailAndAnyPassword() {
         String body = "{\n" +
-                "    \"password\": \"qaw8s587d\",\n" +
-                "    \"email\": \"catrin75a8@gmail.com\",\n" +
+                "    \"password\": \"qaw8s7787d\",\n" +
+                "    \"email\": \"catrin98a8@gmail.com\",\n" +
                 "    \"phone\": null\n" +
                 "}";
 
@@ -29,7 +29,7 @@ public class LoginTest {
     @Test
     public void loginEmptyEmailAndAnyPassword() {
         String body = "{\n" +
-                "    \"password\": \"qaw55sff8d\",\n" +
+                "    \"password\": \"qaw5uusff8d\",\n" +
                 "    \"email\": \"\",\n" +
                 "    \"phone\": null\n" +
                 "}";
@@ -50,7 +50,7 @@ public class LoginTest {
     public void loginAnyEmailAndEmptyPassword() {
         String body = "{\n" +
                 "    \"password\": \"\",\n" +
-                "    \"email\": \"ca4875888@gmail.com\",\n" +
+                "    \"email\": \"capp5888@gmail.com\",\n" +
                 "    \"phone\": null\n" +
                 "}";
 
@@ -109,9 +109,9 @@ public class LoginTest {
     @Test
     public void loginAnyPhoneNumberAndAnyPassword() {
         String body = "{\n" +
-                "    \"password\": \"q5aws578d\",\n" +
+                "    \"password\": \"q5aws778d\",\n" +
                 "    \"email\": null,\n" +
-                "    \"phone\": \"+375257255765\" \n" +
+                "    \"phone\": \"+375257777765\" \n" +
                 "}";
 
         given().
@@ -129,9 +129,9 @@ public class LoginTest {
     @Test
     public void loginWithIncorrectPhoneNumberAndAnyPassword() {
         String body = "{\n" +
-                "    \"password\": \"qaw5s8d\",\n" +
+                "    \"password\": \"qa75s8d\",\n" +
                 "    \"email\": null,\n" +
-                "    \"phone\": \"29525084065\" \n" +
+                "    \"phone\": \"29525084066\" \n" +
                 "}";
 
         given().
@@ -151,7 +151,7 @@ public class LoginTest {
         String body = "{\n" +
                 "    \"password\": \"\",\n" +
                 "    \"email\": null,\n" +
-                "    \"phone\": \"+375297855767\" \n" +
+                "    \"phone\": \"+375297151761\" \n" +
                 "}";
 
         given().
