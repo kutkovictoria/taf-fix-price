@@ -10,4 +10,5 @@ public class HomePageLocators {
     public static final String SEARCH_INPUT_LOCATOR = "//input[@class='search-input']";
     public static final String CATALOG_BUTTON_LOCATOR = "//a[@class='catalog-link']";
     public static final String CART_BUTTON_LOCATOR = "//a[@class='cart link']";
+    public static final String SEARCH_BUTTON_LOCATOR =  "//i[@class='icon-search']"; //"//a[@class='result-all-link nuxt-link-active']";
 }
