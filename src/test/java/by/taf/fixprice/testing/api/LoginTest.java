@@ -1,6 +1,4 @@
 package by.taf.fixprice.testing.api;
-
-import jdk.jfr.Description;
 import org.junit.jupiter.api.Test;
 
 import static io.restassured.RestAssured.given;
@@ -12,8 +10,8 @@ public class LoginTest {
     @Test
     public void loginAnyEmailAndAnyPassword() {
         String body = "{\n" +
-                "    \"password\": \"qaw8s87d\",\n" +
-                "    \"email\": \"catrin7a8@gmail.com\",\n" +
+                "    \"password\": \"qaw8s587d\",\n" +
+                "    \"email\": \"catrin75a8@gmail.com\",\n" +
                 "    \"phone\": null\n" +
                 "}";
 
@@ -31,7 +29,7 @@ public class LoginTest {
     @Test
     public void loginEmptyEmailAndAnyPassword() {
         String body = "{\n" +
-                "    \"password\": \"qaw5sff8d\",\n" +
+                "    \"password\": \"qaw55sff8d\",\n" +
                 "    \"email\": \"\",\n" +
                 "    \"phone\": null\n" +
                 "}";
@@ -52,7 +50,7 @@ public class LoginTest {
     public void loginAnyEmailAndEmptyPassword() {
         String body = "{\n" +
                 "    \"password\": \"\",\n" +
-                "    \"email\": \"ca87888@gmail.com\",\n" +
+                "    \"email\": \"ca4875888@gmail.com\",\n" +
                 "    \"phone\": null\n" +
                 "}";
 
@@ -91,7 +89,7 @@ public class LoginTest {
     @Test
     public void loginIncorrectEmailAndAnyPassword() {
         String body = "{\n" +
-                "    \"password\": \"qwert3\",\n" +
+                "    \"password\": \"qwe4rt3\",\n" +
                 "    \"email\": \"test.com\",\n" +
                 "    \"phone\": null\n" +
                 "}";
@@ -111,9 +109,9 @@ public class LoginTest {
     @Test
     public void loginAnyPhoneNumberAndAnyPassword() {
         String body = "{\n" +
-                "    \"password\": \"q5aws78d\",\n" +
+                "    \"password\": \"q5aws578d\",\n" +
                 "    \"email\": null,\n" +
-                "    \"phone\": \"+375297255765\" \n" +
+                "    \"phone\": \"+375257255765\" \n" +
                 "}";
 
         given().
@@ -131,9 +129,9 @@ public class LoginTest {
     @Test
     public void loginWithIncorrectPhoneNumberAndAnyPassword() {
         String body = "{\n" +
-                "    \"password\": \"qaws8d\",\n" +
+                "    \"password\": \"qaw5s8d\",\n" +
                 "    \"email\": null,\n" +
-                "    \"phone\": \"29525085065\" \n" +
+                "    \"phone\": \"29525084065\" \n" +
                 "}";
 
         given().
