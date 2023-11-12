@@ -1,5 +1,8 @@
 package by.taf.fixprice.locators;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+
 public class HomePageLocators {
     public static final String LOGIN_BUTTON_LOCATOR = "//button[@class='log-in link']";
     public static final String COPY_RIGHT_LOCATOR = "//p[@class='copyright copyright-desktop']";
@@ -11,4 +14,5 @@ public class HomePageLocators {
     public static final String CATALOG_BUTTON_LOCATOR = "//a[@class='catalog-link']";
     public static final String CART_BUTTON_LOCATOR = "//a[@class='cart link']";
     public static final String SEARCH_BUTTON_LOCATOR =  "//i[@class='icon-search']"; //"//a[@class='result-all-link nuxt-link-active']";
+
 }
