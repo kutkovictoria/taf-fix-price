@@ -1,5 +1,6 @@
 package by.taf.fixprice.webdriver;
 
+
 import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -8,6 +9,7 @@ import org.openqa.selenium.support.ui.Wait;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.time.Duration;
+
 
 public class Singleton {
     private static WebDriver driver;
@@ -32,19 +34,25 @@ public class Singleton {
     }
 
     public static void clickWebElement(String xpath) {
-        WebElement confirmMinskLocationButtonElement = new WebDriverWait(Singleton.getDriver(), Duration.ofSeconds(1))
+        WebElement webElement = new WebDriverWait(Singleton.getDriver(), Duration.ofSeconds(1))
                 .until(ExpectedConditions.elementToBeClickable(By.xpath(xpath)));
-        confirmMinskLocationButtonElement.click();
+        webElement.click();
+    }
+
+    public static void submitWebElement(String xpath) {
+        WebElement webElement = new WebDriverWait(Singleton.getDriver(), Duration.ofSeconds(1))
+                .until(ExpectedConditions.elementToBeClickable(By.xpath(xpath)));
+        webElement.submit();
     }
     public static String getTextFromWebElement(String xpath) {
-        WebElement confirmMinskLocationButtonElement = new WebDriverWait(Singleton.getDriver(), Duration.ofSeconds(1))
+        WebElement webElement = new WebDriverWait(Singleton.getDriver(), Duration.ofSeconds(1))
                 .until(ExpectedConditions.elementToBeClickable(By.xpath(xpath)));
-       return confirmMinskLocationButtonElement.getText();
+       return webElement.getText();
     }
     public static void findWebElementAndSendKeys(String xpath, String sendKeys) {
-        WebElement confirmMinskLocationButtonElement = new WebDriverWait(Singleton.getDriver(), Duration.ofSeconds(1))
+        WebElement webElement = new WebDriverWait(Singleton.getDriver(), Duration.ofSeconds(1))
                 .until(ExpectedConditions.elementToBeClickable(By.xpath(xpath)));
-        confirmMinskLocationButtonElement.sendKeys(sendKeys);
+        webElement.sendKeys(sendKeys);
     }
 
     public static void waitForWebElementAndClick(String xpath) {
