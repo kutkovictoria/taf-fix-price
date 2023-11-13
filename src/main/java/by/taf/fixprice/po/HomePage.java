@@ -46,11 +46,13 @@ public class HomePage {
         Singleton.clickWebElement(CART_BUTTON_LOCATOR);
     }
     public void clickSearchButton(){
-        Singleton.waitForWebElementAndClick(SEARCH_BUTTON_LOCATOR);
+        Singleton.findWebElementAndClickEnter(SEARCH_BUTTON_LOCATOR);
     }
     public void enterSearchQuery(){
-        String sendKeys = "Aльбом";
+        String sendKeys = "Пенал";
         Singleton.findWebElementAndSendKeys(SEARCH_INPUT_LOCATOR, sendKeys);
+        Singleton.waitFor(2);
+        Singleton.findWebElementAndClickEnter(SEARCH_INPUT_LOCATOR);
     }
 
 }

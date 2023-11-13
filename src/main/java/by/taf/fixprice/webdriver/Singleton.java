@@ -39,10 +39,10 @@ public class Singleton {
         webElement.click();
     }
 
-    public static void submitWebElement(String xpath) {
+    public static void findWebElementAndClickEnter(String xpath) {
         WebElement webElement = new WebDriverWait(Singleton.getDriver(), Duration.ofSeconds(1))
                 .until(ExpectedConditions.elementToBeClickable(By.xpath(xpath)));
-        webElement.submit();
+        webElement.sendKeys(Keys.ENTER);
     }
     public static String getTextFromWebElement(String xpath) {
         WebElement webElement = new WebDriverWait(Singleton.getDriver(), Duration.ofSeconds(1))

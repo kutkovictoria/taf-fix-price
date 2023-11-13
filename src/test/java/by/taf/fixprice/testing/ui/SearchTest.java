@@ -28,11 +28,9 @@ public class SearchTest extends BaseTest {
     public void checkSearchResults(){
         HomePage homePage = new HomePage();
         homePage.enterSearchQuery();
-        Singleton.waitFor(2);
-        homePage.clickSearchButton();
         SearchResultsPage searchResultsPage = new SearchResultsPage();
         List<String> actualResult = searchResultsPage.getResultTitleList();
-        String expectedResult = "Альбом";
-        Assertions.assertTrue(actualResult.stream().allMatch(item -> item.contains(expectedResult)), "No results found");
+        String expectedResult = "Пенал";
+        Assertions.assertTrue(actualResult.stream().allMatch(item -> item.contains(expectedResult)), "Not all titles have results found");
     }
 }

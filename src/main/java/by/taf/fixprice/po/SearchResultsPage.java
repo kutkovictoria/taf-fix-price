@@ -18,7 +18,7 @@ public class SearchResultsPage {
     //private JavascriptExecutor js = (JavascriptExecutor) Singleton.getDriver();
     public void clickBerlingoCheckBox(){
         //Singleton.waitForWebElementAndClick(BERLINGO_CHECKBOX_LOCATOR);
-        Singleton.submitWebElement(BERLINGO_CHECKBOX_LOCATOR);
+        Singleton.clickWebElement(BERLINGO_CHECKBOX_LOCATOR);
         //js.executeScript("document.querySelector(document.querySelector('#price_110000300').click();");
     }
     public void clickPrice3BYN(){
@@ -26,14 +26,16 @@ public class SearchResultsPage {
         //js.executeScript("document.querySelector(document.querySelector('#brand_136').click();");
     }
     public List<String> getResultTitleList() {
-        List<String> sketchbookTitles = new ArrayList<>();
-        int numberOfElements = 8;
-
-        for (int i = 0; i < numberOfElements; i++) {
-            WebElement element = new WebDriverWait(Singleton.getDriver(), Duration.ofSeconds(1))
-                    .until(ExpectedConditions.elementToBeClickable(By.xpath("//a[@class='title]'")));
-            sketchbookTitles.add(element.getText());
+        List <String> pencilСaseTitles = new ArrayList<>();
+        List<WebElement> elements = new WebDriverWait(Singleton.getDriver(), Duration.ofSeconds(1))
+                .until(ExpectedConditions.presenceOfAllElementsLocatedBy(By.xpath("//a[@class='title']")));
+        for (WebElement element : elements) {
+            pencilСaseTitles.add(element.getText());
         }
-        return sketchbookTitles;
+        return pencilСaseTitles;
     }
+
+
+    //Singleton.getDriver().findElements(By.xpath("//a[@class='title']"));
+
 }
