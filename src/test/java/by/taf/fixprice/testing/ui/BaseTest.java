@@ -1,4 +1,5 @@
 package by.taf.fixprice.testing.ui;
+
 import by.taf.fixprice.po.HomePage;
 import by.taf.fixprice.webdriver.Singleton;
 import org.apache.logging.log4j.LogManager;
@@ -8,6 +9,7 @@ import org.junit.jupiter.api.BeforeEach;
 
 public class BaseTest {
     private static final Logger logger = LogManager.getLogger();
+
     @BeforeEach
     public void openHomePageAndCloseBanners() {
         HomePage homePage = new HomePage();

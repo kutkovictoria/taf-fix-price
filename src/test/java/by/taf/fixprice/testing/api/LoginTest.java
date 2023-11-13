@@ -1,4 +1,5 @@
 package by.taf.fixprice.testing.api;
+
 import org.junit.jupiter.api.Test;
 
 import static io.restassured.RestAssured.given;
@@ -10,8 +11,8 @@ public class LoginTest {
     @Test
     public void loginAnyEmailAndAnyPassword() {
         String body = "{\n" +
-                "    \"password\": \"qaw8s7787d\",\n" +
-                "    \"email\": \"catrin98a8@gmail.com\",\n" +
+                "    \"password\": \"qa8s7787d\",\n" +
+                "    \"email\": \"catrin88a8@gmail.com\",\n" +
                 "    \"phone\": null\n" +
                 "}";
 
@@ -109,9 +110,9 @@ public class LoginTest {
     @Test
     public void loginAnyPhoneNumberAndAnyPassword() {
         String body = "{\n" +
-                "    \"password\": \"q5aws778d\",\n" +
+                "    \"password\": \"q5a7s778d\",\n" +
                 "    \"email\": null,\n" +
-                "    \"phone\": \"+375257777765\" \n" +
+                "    \"phone\": \"+375257007765\" \n" +
                 "}";
 
         given().

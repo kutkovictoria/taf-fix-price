@@ -6,10 +6,11 @@ import org.apache.logging.log4j.Logger;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
-public class HomePageTest extends BaseTest{
+public class HomePageTest extends BaseTest {
     private static final Logger logger = LogManager.getLogger();
+
     @Test
-    public void homePageIsOpened(){
+    public void homePageIsOpened() {
         HomePage homePage = new HomePage();
         logger.info("Open HomePage");
         String actualResult = homePage.getCopyRightText();

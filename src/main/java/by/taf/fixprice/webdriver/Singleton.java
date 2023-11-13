@@ -44,11 +44,13 @@ public class Singleton {
                 .until(ExpectedConditions.elementToBeClickable(By.xpath(xpath)));
         webElement.sendKeys(Keys.ENTER);
     }
+
     public static String getTextFromWebElement(String xpath) {
         WebElement webElement = new WebDriverWait(Singleton.getDriver(), Duration.ofSeconds(1))
                 .until(ExpectedConditions.elementToBeClickable(By.xpath(xpath)));
-       return webElement.getText();
+        return webElement.getText();
     }
+
     public static void findWebElementAndSendKeys(String xpath, String sendKeys) {
         WebElement webElement = new WebDriverWait(Singleton.getDriver(), Duration.ofSeconds(1))
                 .until(ExpectedConditions.elementToBeClickable(By.xpath(xpath)));

@@ -10,7 +10,7 @@ import java.util.List;
 
 public class SearchTest extends BaseTest {
     @Test
-    public void checkSearchResults(){
+    public void checkSearchResults() {
         HomePage homePage = new HomePage();
         homePage.enterSearchQuery("Пенал");
         SearchResultsPage searchResultsPage = new SearchResultsPage();
@@ -19,8 +19,9 @@ public class SearchTest extends BaseTest {
         String expectedResult = "Пенал";
         Assertions.assertTrue(actualResult.stream().allMatch(item -> item.contains(expectedResult)), "Not all titles contain " + expectedResult);
     }
+
     @Test
-    public void checkCompanyFilterIsApplied(){
+    public void checkCompanyFilterIsApplied() {
         HomePage homePage = new HomePage();
         homePage.enterSearchQuery("Пенал");
         SearchResultsPage searchResultsPage = new SearchResultsPage();
@@ -29,8 +30,9 @@ public class SearchTest extends BaseTest {
         String expectedResult = "Hupper Dupper";
         Assertions.assertTrue(actualResult.stream().allMatch(item -> item.contains(expectedResult)), "Not all titles contain " + expectedResult);
     }
+
     @Test
-    public void checkPriceFilterIsApplied(){
+    public void checkPriceFilterIsApplied() {
         HomePage homePage = new HomePage();
         homePage.enterSearchQuery("Пенал");
         SearchResultsPage searchResultsPage = new SearchResultsPage();

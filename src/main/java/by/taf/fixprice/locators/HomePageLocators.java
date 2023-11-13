@@ -8,6 +8,5 @@ public class HomePageLocators {
     public static final String CHOOSE_DELIVERY_STORE_BUTTON_LOCATOR = "//div[@class='title'][text() = 'Самовывоз']";
     public static final String DELIVERY_STORE_ADDRESS_BUTTON_LOCATOR = "//div[@class='description']";
     public static final String SEARCH_INPUT_LOCATOR = "//input[@class='search-input']";
-    public static final String SEARCH_BUTTON_LOCATOR =  "//i[@class='icon-search']";
-
+    public static final String SEARCH_BUTTON_LOCATOR = "//i[@class='icon-search']";
 }

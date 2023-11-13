@@ -29,16 +29,18 @@ public class HomePage {
     public void clickChooseDeliveryStoreButton() {
         Singleton.waitForWebElementAndClick(CHOOSE_DELIVERY_STORE_BUTTON_LOCATOR);
     }
-    public String getDeliveryAddressText(){
-       return Singleton.getTextFromWebElement(DELIVERY_STORE_ADDRESS_BUTTON_LOCATOR);
+
+    public String getDeliveryAddressText() {
+        return Singleton.getTextFromWebElement(DELIVERY_STORE_ADDRESS_BUTTON_LOCATOR);
     }
-    public void clickSearchButton(){
+
+    public void clickSearchButton() {
         Singleton.findWebElementAndClickEnter(SEARCH_BUTTON_LOCATOR);
     }
-    public void enterSearchQuery(String sendKeys){
+
+    public void enterSearchQuery(String sendKeys) {
         Singleton.findWebElementAndSendKeys(SEARCH_INPUT_LOCATOR, sendKeys);
         Singleton.waitFor(1);
         Singleton.findWebElementAndClickEnter(SEARCH_INPUT_LOCATOR);
     }
-
 }

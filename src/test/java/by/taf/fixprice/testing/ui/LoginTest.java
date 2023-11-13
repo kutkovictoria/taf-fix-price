@@ -10,6 +10,7 @@ import org.junit.jupiter.api.Test;
 
 public class LoginTest extends BaseTest {
     private static final Logger logger = LogManager.getLogger();
+
     @Test
     public void loginWithAnyCorrectEmailAnyPassword() {
         logger.info("Test: login with any correct email and any password");
