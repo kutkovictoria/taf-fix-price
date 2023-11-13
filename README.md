@@ -26,7 +26,8 @@ POs are splitted into 3 packages:
 - webdriver package contains Singleton Class created using Singleton pattern.
   It is used for all methods related to WebDriver: setup and quit driver,
   the methods to find/click/sendKeys web element using Explicit Wait.
-  Testing part has 2 packages:
+
+Testing part has 2 packages:
 - api testing contains BaseUrlTest and LoginTest
 - ui testing contains main UI tests: LoginTest, SearchTests, DeliveryStoreTest, BaseTest and HomePageTest.
 
