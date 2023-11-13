@@ -23,7 +23,7 @@ public class DeliveryStoreTest extends BaseTest {
         logger.info("set Delivery Store");
         Singleton.waitFor(2);
         String actualResult = homePage.getDeliveryAddressText();
-        String expectedResult = "г.Минск, ул.Алибегова, д.15";
+        String expectedResult = "Рі.РњРёРЅСЃРє, СѓР».РђР»РёР±РµРіРѕРІР°, Рґ.15";
         Assertions.assertEquals(expectedResult, actualResult);
         logger.info("Delivery Store is :" + expectedResult);
     }
