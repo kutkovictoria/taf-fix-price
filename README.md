@@ -3,7 +3,7 @@ Goal of Automated Testing Framework: UI (User Interface) and API (Application Pr
 store.
 Application under testing: https://fix-price.by/ - online store in the format «shop fixed price»
 Github repository: https://github.com/kutkovictoria/taf-fix-price
----
+--
 Technologies:
 Programming Language: Java (version 17)
 Build system: Maven
@@ -13,7 +13,7 @@ Automated Testing Framework: Selenium WebDriver
 Logging framework: Log4j2
 Automation Test Reporting Tool: Allure Report
 CD/CI framework: Jenkins
----
+--
 Project structure:
 Page Object Model is used as a pattern for the current project to avoid code duplication and enhance code reusability.
 POs are splitted into 3 packages:
