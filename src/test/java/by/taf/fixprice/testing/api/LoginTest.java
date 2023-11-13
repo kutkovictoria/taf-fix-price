@@ -11,8 +11,8 @@ public class LoginTest {
     @Test
     public void loginAnyEmailAndAnyPassword() {
         String body = "{\n" +
-                "    \"password\": \"qa8s7787d\",\n" +
-                "    \"email\": \"catrin88a8@gmail.com\",\n" +
+                "    \"password\": \"qa117787d\",\n" +
+                "    \"email\": \"catri118a8@gmail.com\",\n" +
                 "    \"phone\": null\n" +
                 "}";
 
@@ -152,7 +152,7 @@ public class LoginTest {
         String body = "{\n" +
                 "    \"password\": \"\",\n" +
                 "    \"email\": null,\n" +
-                "    \"phone\": \"+375297151761\" \n" +
+                "    \"phone\": \"+375297154461\" \n" +
                 "}";
 
         given().
