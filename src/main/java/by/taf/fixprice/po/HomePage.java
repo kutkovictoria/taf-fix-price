@@ -1,14 +1,6 @@
 package by.taf.fixprice.po;
 
 import by.taf.fixprice.webdriver.Singleton;
-import org.openqa.selenium.By;
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
-
-import java.time.Duration;
-import java.util.ArrayList;
-import java.util.List;
 
 import static by.taf.fixprice.locators.HomePageLocators.*;
 
@@ -35,23 +27,17 @@ public class HomePage {
     }
 
     public void clickChooseDeliveryStoreButton() {
-        Singleton.clickWebElement(CHOOSE_DELIVERY_STORE_BUTTON_LOCATOR);
+        Singleton.waitForWebElementAndClick(CHOOSE_DELIVERY_STORE_BUTTON_LOCATOR);
     }
-
-    public void clickCatalogButton() {
-        Singleton.clickWebElement(CATALOG_BUTTON_LOCATOR);
-    }
-
-    public void clickCartButton() {
-        Singleton.clickWebElement(CART_BUTTON_LOCATOR);
+    public String getDeliveryAddressText(){
+       return Singleton.getTextFromWebElement(DELIVERY_STORE_ADDRESS_BUTTON_LOCATOR);
     }
     public void clickSearchButton(){
         Singleton.findWebElementAndClickEnter(SEARCH_BUTTON_LOCATOR);
     }
-    public void enterSearchQuery(){
-        String sendKeys = "Пенал";
+    public void enterSearchQuery(String sendKeys){
         Singleton.findWebElementAndSendKeys(SEARCH_INPUT_LOCATOR, sendKeys);
-        Singleton.waitFor(2);
+        Singleton.waitFor(1);
         Singleton.findWebElementAndClickEnter(SEARCH_INPUT_LOCATOR);
     }
 

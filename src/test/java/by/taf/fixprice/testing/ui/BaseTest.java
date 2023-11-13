@@ -16,10 +16,6 @@ public class BaseTest {
         homePage.clickAcceptCookieButton();
         homePage.clickConfirmMinskLocationButton();
         logger.info("Cookies are accepted and Minsk location is confirmed");
-//        homePage.clickChooseDeliveryStoreButton();
-//        DeliveryStorePage storePage = new DeliveryStorePage();
-//        storePage.clickOnFirstAddressFromTheList();
-//        storePage.clickSelectStoreButton();
     }
 
     @AfterEach
