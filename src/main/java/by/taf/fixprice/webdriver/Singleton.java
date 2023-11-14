@@ -87,7 +87,7 @@ public class Singleton {
                         return true;
                     });
         } catch (TimeoutException e) {
-            System.out.println("TimeoutException!");
+            logger.info("Error message: TimeoutException!");
         }
     }
 
@@ -105,7 +105,7 @@ public class Singleton {
                         return true;
                     });
         } catch (TimeoutException e) {
-            System.out.println("TimeoutException!");
+            logger.info("Error message: TimeoutException!");
         }
     }
 
