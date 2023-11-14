@@ -7,12 +7,15 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.FluentWait;
 import org.openqa.selenium.support.ui.Wait;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 import java.time.Duration;
 
 
 public class Singleton {
     private static WebDriver driver;
+    public static final Logger logger = LogManager.getLogger();
 
     private Singleton() {
     }
@@ -26,6 +29,7 @@ public class Singleton {
         return driver;
     }
 
+
     public static void quitDriver() {
         if (driver != null) {
             driver.quit();
@@ -34,15 +38,23 @@ public class Singleton {
     }
 
     public static void clickWebElement(String xpath) {
-        WebElement webElement = new WebDriverWait(Singleton.getDriver(), Duration.ofSeconds(1))
-                .until(ExpectedConditions.elementToBeClickable(By.xpath(xpath)));
-        webElement.click();
+        try {
+            WebElement webElement = new WebDriverWait(Singleton.getDriver(), Duration.ofSeconds(1))
+                    .until(ExpectedConditions.elementToBeClickable(By.xpath(xpath)));
+            webElement.click();
+        } catch (Exception e) {
+            logger.info("Error message: TimeoutException!");
+        }
     }
 
     public static void findWebElementAndClickEnter(String xpath) {
-        WebElement webElement = new WebDriverWait(Singleton.getDriver(), Duration.ofSeconds(1))
-                .until(ExpectedConditions.elementToBeClickable(By.xpath(xpath)));
-        webElement.sendKeys(Keys.ENTER);
+        try {
+            WebElement webElement = new WebDriverWait(Singleton.getDriver(), Duration.ofSeconds(1))
+                    .until(ExpectedConditions.elementToBeClickable(By.xpath(xpath)));
+            webElement.sendKeys(Keys.ENTER);
+        } catch (Exception e) {
+            logger.info("Error message: TimeoutException!");
+        }
     }
 
     public static String getTextFromWebElement(String xpath) {
@@ -52,9 +64,13 @@ public class Singleton {
     }
 
     public static void findWebElementAndSendKeys(String xpath, String sendKeys) {
-        WebElement webElement = new WebDriverWait(Singleton.getDriver(), Duration.ofSeconds(1))
-                .until(ExpectedConditions.elementToBeClickable(By.xpath(xpath)));
-        webElement.sendKeys(sendKeys);
+        try {
+            WebElement webElement = new WebDriverWait(Singleton.getDriver(), Duration.ofSeconds(1))
+                    .until(ExpectedConditions.elementToBeClickable(By.xpath(xpath)));
+            webElement.sendKeys(sendKeys);
+        } catch (TimeoutException e) {
+            logger.info("Error message: TimeoutException!");
+        }
     }
 
     public static void waitForWebElementAndClick(String xpath) {
