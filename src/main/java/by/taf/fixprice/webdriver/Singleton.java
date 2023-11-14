@@ -39,7 +39,7 @@ public class Singleton {
 
     public static void clickWebElement(String xpath) {
         try {
-            WebElement webElement = new WebDriverWait(Singleton.getDriver(), Duration.ofSeconds(1))
+            WebElement webElement = new WebDriverWait(Singleton.getDriver(), Duration.ofSeconds(4))
                     .until(ExpectedConditions.elementToBeClickable(By.xpath(xpath)));
             webElement.click();
         } catch (Exception e) {
@@ -49,7 +49,7 @@ public class Singleton {
 
     public static void findWebElementAndClickEnter(String xpath) {
         try {
-            WebElement webElement = new WebDriverWait(Singleton.getDriver(), Duration.ofSeconds(1))
+            WebElement webElement = new WebDriverWait(Singleton.getDriver(), Duration.ofSeconds(4))
                     .until(ExpectedConditions.elementToBeClickable(By.xpath(xpath)));
             webElement.sendKeys(Keys.ENTER);
         } catch (Exception e) {
@@ -65,7 +65,7 @@ public class Singleton {
 
     public static void findWebElementAndSendKeys(String xpath, String sendKeys) {
         try {
-            WebElement webElement = new WebDriverWait(Singleton.getDriver(), Duration.ofSeconds(1))
+            WebElement webElement = new WebDriverWait(Singleton.getDriver(), Duration.ofSeconds(4))
                     .until(ExpectedConditions.elementToBeClickable(By.xpath(xpath)));
             webElement.sendKeys(sendKeys);
         } catch (TimeoutException e) {
