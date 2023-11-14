@@ -8,11 +8,11 @@ import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 
 public class BaseTest {
-    private static final Logger logger = LogManager.getLogger();
+    protected static final Logger logger = LogManager.getLogger();
+    protected HomePage homePage = new HomePage();
 
     @BeforeEach
     public void openHomePageAndCloseBanners() {
-        HomePage homePage = new HomePage();
         homePage.openHomePage();
         logger.info("Open Home page");
         homePage.clickAcceptCookieButton();

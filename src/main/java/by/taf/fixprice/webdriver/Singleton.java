@@ -58,7 +58,7 @@ public class Singleton {
     }
 
     public static String getTextFromWebElement(String xpath) {
-        WebElement webElement = new WebDriverWait(Singleton.getDriver(), Duration.ofSeconds(2))
+        WebElement webElement = new WebDriverWait(Singleton.getDriver(), Duration.ofSeconds(10))
                 .until(ExpectedConditions.elementToBeClickable(By.xpath(xpath)));
         return webElement.getText();
     }

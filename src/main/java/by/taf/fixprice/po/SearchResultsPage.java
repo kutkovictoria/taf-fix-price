@@ -24,7 +24,7 @@ public class SearchResultsPage {
 
     public List<String> getSearchResultTitles() {
         List<String> pencilСaseTitles = new ArrayList<>();
-        List<WebElement> elements = new WebDriverWait(Singleton.getDriver(), Duration.ofSeconds(1))
+        List<WebElement> elements = new WebDriverWait(Singleton.getDriver(), Duration.ofSeconds(4))
                 .until(ExpectedConditions.presenceOfAllElementsLocatedBy(By.xpath(RESULT_TITLES_LOCATOR)));
         for (WebElement element : elements) {
             pencilСaseTitles.add(element.getText());

@@ -1,5 +1,6 @@
 package by.taf.fixprice.testing.api;
 
+import com.github.javafaker.Faker;
 import org.junit.jupiter.api.Test;
 
 import static io.restassured.RestAssured.given;
@@ -8,11 +9,12 @@ import static org.hamcrest.Matchers.equalTo;
 public class LoginTest {
     final String URL_API = "https://api.fix-price.by/buyer/v2/auth/login";
 
+
     @Test
     public void loginAnyEmailAndAnyPassword() {
         String body = "{\n" +
-                "    \"password\": \"qa152747d\",\n" +
-                "    \"email\": \"catri33118455@gmail.com\",\n" +
+                "    \"password\": \"qaw5uu55f8d\",\n" +
+                "    \"email\": \"hjash88asd@gmail.com\",\n" +
                 "    \"phone\": null\n" +
                 "}";
 
@@ -110,9 +112,9 @@ public class LoginTest {
     @Test
     public void loginAnyPhoneNumberAndAnyPassword() {
         String body = "{\n" +
-                "    \"password\": \"q5a7hh558d\",\n" +
+                "    \"password\": \"q5a7hh48d\",\n" +
                 "    \"email\": null,\n" +
-                "    \"phone\": \"+375253441711\" \n" +
+                "    \"phone\": \"+375253441722\" \n" +
                 "}";
 
         given().

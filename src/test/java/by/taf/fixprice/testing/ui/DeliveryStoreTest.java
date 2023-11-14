@@ -9,12 +9,10 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 public class DeliveryStoreTest extends BaseTest {
-    private static final Logger logger = LogManager.getLogger();
+
 
     @Test
     public void deliveryStoreIsSet() {
-        HomePage homePage = new HomePage();
-        logger.info("Open Home page");
         homePage.clickChooseDeliveryStoreButton();
         DeliveryStorePage storePage = new DeliveryStorePage();
         logger.info("open DeliveryStorePage page");

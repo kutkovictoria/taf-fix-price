@@ -5,16 +5,14 @@ import by.taf.fixprice.po.SearchResultsPage;
 
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
+
 
 import java.util.List;
 
 public class SearchTest extends BaseTest {
-    public static final Logger logger = LogManager.getLogger();
+
     @Test
     public void checkSearchResults() {
-        HomePage homePage = new HomePage();
         homePage.enterSearchQuery("Пенал");
         logger.info("Search query is entered");
         SearchResultsPage searchResultsPage = new SearchResultsPage();
@@ -29,7 +27,6 @@ public class SearchTest extends BaseTest {
 
     @Test
     public void checkCompanyFilterIsApplied() {
-        HomePage homePage = new HomePage();
         homePage.enterSearchQuery("Пенал");
         SearchResultsPage searchResultsPage = new SearchResultsPage();
         logger.info("Search query is entered");
@@ -43,7 +40,6 @@ public class SearchTest extends BaseTest {
 
     @Test
     public void checkPriceFilterIsApplied() {
-        HomePage homePage = new HomePage();
         homePage.enterSearchQuery("Пенал");
         logger.info("Search query is entered");
         SearchResultsPage searchResultsPage = new SearchResultsPage();

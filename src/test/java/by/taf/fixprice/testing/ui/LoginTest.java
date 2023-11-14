@@ -9,12 +9,10 @@ import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
 public class LoginTest extends BaseTest {
-    private static final Logger logger = LogManager.getLogger();
 
     @Test
     public void loginWithAnyCorrectEmailAnyPassword() {
         logger.info("Test: login with any correct email and any password");
-        HomePage homePage = new HomePage();
         homePage.clickLoginButton();
         logger.info("Open Login page");
 
@@ -35,7 +33,6 @@ public class LoginTest extends BaseTest {
     @Test
     public void loginWithWrongFormatEmailAnyPassword() {
         logger.info("Test: login with wrong format email and any password");
-        HomePage homePage = new HomePage();
         homePage.clickLoginButton();
 
         LoginPage loginPage = new LoginPage();
@@ -55,7 +52,6 @@ public class LoginTest extends BaseTest {
     @Test
     public void loginWithEmptyEmailAnyPassword() {
         logger.info("Test: login with empty email and any password");
-        HomePage homePage = new HomePage();
         homePage.clickLoginButton();
 
         LoginPage loginPage = new LoginPage();
@@ -74,7 +70,6 @@ public class LoginTest extends BaseTest {
 
     @Test
     public void loginWithAnyCorrectPhoneNumberAnyPassword() {
-        HomePage homePage = new HomePage();
         homePage.clickLoginButton();
 
         LoginPage loginPage = new LoginPage();
@@ -89,7 +84,6 @@ public class LoginTest extends BaseTest {
 
     @Test
     public void loginWithPhoneNumberWrongFormatAnyPassword() {
-        HomePage homePage = new HomePage();
         homePage.clickLoginButton();
 
         LoginPage loginPage = new LoginPage();
@@ -104,7 +98,6 @@ public class LoginTest extends BaseTest {
 
     @Test
     public void loginWithEmptyPhoneNumberAnyPassword() {
-        HomePage homePage = new HomePage();
         homePage.clickLoginButton();
 
         LoginPage loginPage = new LoginPage();

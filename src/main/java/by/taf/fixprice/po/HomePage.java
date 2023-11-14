@@ -6,8 +6,10 @@ import static by.taf.fixprice.locators.HomePageLocators.*;
 
 public class HomePage {
 
+
     public void openHomePage() {
         Singleton.getDriver().get("https://fix-price.by/");
+
     }
 
     public void clickLoginButton() {
