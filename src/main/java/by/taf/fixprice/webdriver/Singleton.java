@@ -3,6 +3,7 @@ package by.taf.fixprice.webdriver;
 
 import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.FluentWait;
 import org.openqa.selenium.support.ui.Wait;
@@ -22,7 +23,7 @@ public class Singleton {
 
     public static WebDriver getDriver() {
         if (driver == null) {
-            driver = new ChromeDriver();
+            driver = new FirefoxDriver();
             driver.manage().window().maximize();
             driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(4));
         }
